@@ -38,21 +38,21 @@ public class AlumnoController {
 
 	@GetMapping("/porEmail/{filtro}")
 	@ResponseBody
-	public ResponseEntity<List<Alumno>> listaPorEmail(@PathVariable("filtro") String filtro){
+	public ResponseEntity<List<Alumno>> listaPorEmail(@PathVariable String filtro){
 		List<Alumno> lista = service.listaAlumnoPorEmail(filtro);
 		return ResponseEntity.ok(lista);
 	}
 	
 	@GetMapping("/porDNI/{filtro}")
 	@ResponseBody
-	public ResponseEntity<List<Alumno>> listaPorDNI(@PathVariable("filtro") String filtro){
+	public ResponseEntity<List<Alumno>> listaPorDNI(@PathVariable String filtro){
 		List<Alumno> lista = service.listaAlumnoPorDNI(filtro);
 		return ResponseEntity.ok(lista);
 	}
 	
 	@GetMapping("/porNombre/{filtro}")
 	@ResponseBody
-	public ResponseEntity<List<Alumno>> listaPorNombre(@PathVariable("filtro") String filtro){
+	public ResponseEntity<List<Alumno>> listaPorNombre(@PathVariable String filtro){
 		List<Alumno> lista = service.listaAlumnoPorNombreLike(filtro+"%");
 		return ResponseEntity.ok(lista);
 	}
